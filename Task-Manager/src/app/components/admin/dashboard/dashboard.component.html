@@ -1,0 +1,100 @@
+<div class="container mt-4">
+  <h1 class="mb-4">Admin Dashboard</h1>
+
+  <!-- Stats Cards -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card text-white bg-primary mb-3">
+        <div class="card-header">Total Users</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ totalUsers }}</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card text-white bg-success mb-3">
+        <div class="card-header">Total Tasks</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ totalTasks }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Activities -->
+  <div class="card mb-4">
+    <div class="card-header">Recent Activities</div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let activity of recentActivities.slice(-3)">
+         - {{ activity.task }}
+        
+      </li>
+    </ul>
+  </div>
+
+  <!-- User Management -->
+  <div class="card">
+    <div class="card-header">User Management</div>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <button class="btn btn-warning btn-sm me-2" (click)="editUser(user)">Edit</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteUser(user)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+
+  <div *ngIf="editVisible" id="taskFormContainer" class="task-form-container ">
+    <div class="task-form">
+      <h2>Edit User</h2>
+      <form [formGroup] = "UpdateUserForm"  (ngSubmit)="update()">
+        <label for="taskName">First Name</label>
+        <input type="text" id="taskName" name="taskName" formControlName="firstName" required>
+
+        <label for="description">Last Name</label>
+        <input type="text" id="taskName" name="taskName" formControlName="firstName" required>
+
+        <label for="dueDate">Email</label>
+        <input type="text" id="dueDate" name="dueDate" formControlName="email" required>
+
+        <label for="dueDate">Phone Number</label>
+        <input type="text" id="dueDate" name="dueDate" formControlName="phoneNumber" required>
+
+        <h2>Address</h2>
+
+        <label for="dueDate">Street</label>
+        <input type="text" id="dueDate" name="dueDate" formControlName="street" required>
+
+        <label for="dueDate">City</label>
+        <input type="text" id="dueDate" name="dueDate" formControlName="city" required>
+
+        <label for="dueDate">Zip</label>
+        <input type="text" id="dueDate" name="dueDate" formControlName="zip" required>
+
+          
+        <div class="form-buttons">
+          <button type="submit" >Save</button>
+          <button type="button" id="cancelTaskBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

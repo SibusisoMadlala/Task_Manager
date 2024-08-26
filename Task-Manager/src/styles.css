@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    background-image: url("/assets/images/best-background-for-website-15.jpg");
+    height: 100vh;
+    
+  }
+
+  /* Height for devices larger than 576px */
+  @media (min-width: 992px) {
+    body {
+      margin-top: -58.59px;
+      
+    }
+  }

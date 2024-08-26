@@ -1,0 +1,10 @@
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+a{
+    cursor: pointer;
+    color: white;
+}
+
+  

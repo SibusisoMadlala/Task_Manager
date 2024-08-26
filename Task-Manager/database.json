@@ -1,0 +1,144 @@
+{
+  "users": [
+    {
+      "id": "3135",
+      "firstName": "sibusiso",
+      "lastName": "madlala",
+      "email": "sibumadlala03@gmail.com",
+      "newPassword": "12345",
+      "phoneNumber": "",
+      "zip": "",
+      "city": "",
+      "street": "",
+      "role": "user"
+    },
+    {
+      "id": "1234",
+      "firstName": "sibusiso",
+      "lastName": "madlala",
+      "email": "sibumadlala03@gmail.com",
+      "newPassword": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "272a",
+      "firstName": "sibusiso",
+      "lastName": "madlala",
+      "email": "sibusiso.madlala@nagarro.com",
+      "newPassword": "1234",
+      "phoneNumber": "",
+      "zip": "",
+      "city": "",
+      "street": "",
+      "role": "user"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "8596",
+      "taskName": "School",
+      "description": "kjn",
+      "dueDate": "2024-07-31",
+      "priority": "medium",
+      "taskCreatorId": "fb4e"
+    },
+    {
+      "taskName": "School",
+      "description": "xsan",
+      "dueDate": "2024-08-01",
+      "priority": "high",
+      "taskCreatorId": null,
+      "id": "5125"
+    },
+    {
+      "id": "652e",
+      "taskName": "m knqwd",
+      "description": "nb",
+      "dueDate": "",
+      "priority": "",
+      "taskCreatorId": null
+    },
+    {
+      "id": "803c",
+      "taskName": "csd",
+      "description": "cds",
+      "dueDate": "2024-07-23",
+      "priority": "high",
+      "taskCreatorId": "2092"
+    },
+    {
+      "id": "df37",
+      "taskName": "School",
+      "description": "cdsc",
+      "dueDate": "2024-08-28",
+      "priority": "high",
+      "taskCreatorId": "c88c"
+    },
+    {
+      "id": "4324",
+      "taskName": "task",
+      "description": "taski",
+      "dueDate": "2024-08-28",
+      "priority": "high",
+      "taskCreatorId": "c88c"
+    },
+    {
+      "taskName": "School",
+      "description": "dw",
+      "dueDate": "2024-08-08",
+      "priority": "high",
+      "taskCreatorId": "3135",
+      "id": "33fb"
+    },
+    {
+      "id": "c8b2",
+      "taskName": "Viva",
+      "description": "Angular",
+      "dueDate": "2024-08-19",
+      "priority": "high",
+      "taskCreatorId": "272a"
+    }
+  ],
+  "activities": [
+    {
+      "task": "deleted task",
+      "id": "26e9"
+    },
+    {
+      "id": "29cc",
+      "task": "Added Task"
+    },
+    {
+      "id": "0a43",
+      "task": "Deleted Task"
+    },
+    {
+      "id": "4703",
+      "task": "Deleted Task"
+    },
+    {
+      "id": "e747",
+      "task": "Deleted Task"
+    },
+    {
+      "id": "20d7",
+      "task": "Added Task"
+    },
+    {
+      "id": "3a98",
+      "task": "Deleted Task"
+    },
+    {
+      "id": "43b2",
+      "task": "Added Task"
+    },
+    {
+      "id": "e3ec",
+      "task": "Updated Task"
+    },
+    {
+      "id": "bb82",
+      "task": "Added Task"
+    }
+  ]
+}

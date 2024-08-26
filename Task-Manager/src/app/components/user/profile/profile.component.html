@@ -1,0 +1,73 @@
+<div ><div class="row">
+    <div class="col-sm-6">
+            <form [formGroup] = "updateForm"  (ngSubmit)="onSubmit()">
+            
+                
+                
+                    <div class="container">
+                        <h1>Profile Management</h1>
+                        <label for="first-Name">First Name</label>
+                        <input type="text" id="firstName" formControlName="firstName">
+                        
+                    
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="lastName" formControlName="lastName" >
+                        
+                    
+                        <label for="email">Email</label>
+                        <input type="email" id="email" formControlName="email" >
+                           
+                                <h2>Address</h2>
+                    
+                                <label for="street">Street:</label>
+                                <input id="street" formControlName="street" placeholder="Enter street">
+                                
+                        
+                            
+                                <label for="city">City:</label>
+                                <input id="city" formControlName="city"  placeholder="Enter city">
+                                
+            
+                                <label for="zip">Zip Code:</label>
+                                <input id="zip" formControlName="zip"  placeholder="Enter zip code">
+            
+                            
+                            <button type="submit" class="btn btn-primary" >Save</button>
+                    
+                
+                </div>
+            </form>
+    </div>
+
+    <div class="col-sm-6">
+        <form [formGroup] = "passwordForm" (ngSubmit)="save()">
+            
+                
+                <div class="container">
+                    <h1>Change Password</h1>
+                    <label for="Current-Password">Current Password</label>
+                    <input type="password" id="current" formControlName="currentPassword" placeholder="Enter your current password">
+                    
+                
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="newPassword" formControlName="newPassword" placeholder="Enter your new password">
+                    <small *ngIf="passwordForm.errors?.['passWordMismatch']">passwords should match</small>
+                    <div >
+                        <label for="confirm">Confirm Password</label>
+                        <input type="password" id="confirm" formControlName="confirm" placeholder="Confirm Password" ></div>
+                    
+                        <small *ngIf="passwordForm.errors?.['passWordMismatch']">passwords should match</small>
+                    <br>
+                    <button type="submit" class="btn btn-primary" >Save</button>
+        
+                </div>
+            
+        </form>
+    </div>
+
+</div>
+
+
+
+</div>
+

@@ -1,0 +1,57 @@
+<form [formGroup] = "applyForm" (submit)="addUser()">
+    <div class="formcontainer">
+
+        <div class="container"><label for="first-Name">First Name</label>
+            <input type="text" id="firstName" formControlName="firstName">
+            @if(applyForm.controls.firstName.invalid && (applyForm.controls.firstName.touched || applyForm.controls.firstName.dirty)){
+                @if (applyForm.controls.firstName.errors?.["required"]){
+                    <small>*firstName required</small>
+                }
+            }
+        
+            <label for="last-name">Last Name</label>
+            <input type="text" id="lastName" formControlName="lastName" >
+            @if(applyForm.controls.lastName.invalid && (applyForm.controls.lastName.touched || applyForm.controls.lastName.dirty)){
+                @if (applyForm.controls.lastName.errors?.["required"]){
+                    <small>*last Name required</small>
+                }
+            }
+        
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email" >
+            @if(applyForm.controls.email.invalid && (applyForm.controls.email.touched || applyForm.controls.email.dirty)){
+                @if (applyForm.controls.email.errors?.["required"]){
+                    <small>*last Name required</small>
+                }
+                @if (applyForm.controls.email.errors?.["email"]){
+                    <small>*incorrect email format</small>
+                }
+            }
+        
+            <label for="password">Password</label>
+            <input type="password" id="passWord" formControlName="newPassword" >
+            <small *ngIf="applyForm.errors?.['passWordMismatch']">passwords should match</small>
+            @if(applyForm.controls.newPassword.invalid && (applyForm.controls.newPassword.touched || applyForm.controls.newPassword.dirty)){
+                @if (applyForm.controls.newPassword.errors?.["required"]){
+                    <small>*password required</small>
+                }
+            }
+            
+            
+        
+            <label for="confirm">Confirm Password</label>
+            <input type="password" id="confirm" formControlName="confirm" >
+            <small *ngIf="applyForm.errors?.['passWordMismatch']">passwords should match</small>
+            @if(applyForm.controls.confirm.invalid && (applyForm.controls.confirm.touched || applyForm.controls.confirm.dirty)){
+                @if (applyForm.controls.confirm.errors?.["required"]){
+                    <small>*comfirm password required</small>
+                }
+            }
+            
+            <br>
+            <button type="submit" class="btn btn-primary" >Register</button>
+        </div>
+
+    </div>
+</form>
+    

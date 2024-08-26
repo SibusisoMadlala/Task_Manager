@@ -1,0 +1,106 @@
+<div class="task-scheduler">
+    <header>
+      <h1>Task Scheduler</h1>
+      <button id="addTaskBtn" (click)="openform()" >+ Add New Task</button>
+    </header>
+
+    <main>
+      <ul id="taskList" class="task-list">
+        <!-- Task items will be dynamically added here -->
+        <li *ngFor = "let tasks of allTasks" >
+            <div class="col"><h3>{{tasks.taskName}}</h3></div>
+            <div class="col"><p>{{tasks.description}}</p></div>
+            <div class="col"><p>{{tasks.dueDate}}</p></div>
+            <div class="col"><p>{{tasks.priority}}</p></div>
+            <div class="col"><button class="edit space" (click)="loadTaskData(tasks.id ?? '')">Edit</button>
+                
+                <button (click) = "viewTask(tasks.id ?? '')" class="view space">View</button>
+                <button (click)="deleteTask(tasks.id ?? '')" class="space">Delete</button></div>
+        </li>
+      </ul>
+    </main>
+
+
+    
+    <div *ngIf = "formvisible" id="taskFormContainer" class="task-form-container ">
+      <div class="task-form">
+        <h2>Add New Task</h2>
+        <form [formGroup] = "taskForm" (submit) = "addTask()">
+          <label for="taskName">Task Name</label>
+          <input type="text" id="taskName" name="taskName" formControlName="taskName" required>
+
+          <label for="description">Description</label>
+          <textarea id="description" name="description" formControlName="description" required></textarea>
+
+          <label for="dueDate">Due Date</label>
+          <input type="date" id="dueDate" name="dueDate" formControlName="dueDate" required>
+
+            <label for="priority">Priority</label>
+            <select for="priority" formControlName="priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+          <div class="form-buttons">
+            <button type="submit" >Add Task</button>
+            <button type="button" id="cancelTaskBtn" (click) = "closeform()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div *ngIf = "updateformvisible" id="taskFormContainer" class="task-form-container">
+        <div class="task-form">
+          <h2>Edit Task</h2>
+          <form [formGroup] = "updateForm" (submit) = "updateTask()">
+            <label for="taskName">Task Name</label>
+            <input type="text" id="taskName" name="taskName" formControlName="taskName" required>
+  
+            <label for="description">Description</label>
+            <textarea id="description" name="description" formControlName="description" required></textarea>
+  
+            <label for="dueDate">Due Date</label>
+            <input type="date" id="dueDate" name="dueDate" formControlName="dueDate" required>
+  
+              <label for="priority">Priority</label>
+              <select for="priority" formControlName="priority">
+                  <option value="high">High</option>
+                  <option value="medium">Medium</option>
+                  <option value="low">Low</option>
+              </select>
+            <div class="form-buttons">
+              <button type="submit" >Save</button>
+              <button type="button" id="cancelTaskBtn" (click) = "closeUpdateForm()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div *ngIf="viewvisible" class="overlay">
+        <div class="task-details-popup">
+         
+          <h2>Task Details</h2>
+          <div class="task-detail">
+            <label>Task Name:</label>
+            <span>{{ taskView?.taskName }}</span>
+          </div>
+          <div class="task-detail">
+            <label>Description:</label>
+            <span>{{ taskView?.description }}</span>
+          </div>
+          <div class="task-detail">
+            <label>Due Date:</label>
+            <span>{{ taskView?.dueDate }}</span>
+          </div>
+          <div class="task-detail">
+            <label>Priority:</label>
+            <span>{{ taskView?.priority }}</span>
+          </div>
+          <div class="form-buttons">
+            <button type="submit" (click) = "openClose()">Edit</button>
+            <button type="button" id="cancelTaskBtn" (click) = "closeView()">Cancel</button>
+          </div>
+        </div>
+      </div>
+  
+  </div>
